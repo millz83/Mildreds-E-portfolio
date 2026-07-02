@@ -1,0 +1,549 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
+
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family:'Roboto', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+ section {
+    background: linear-gradient(135deg, #f8eff0 0%, #ebd4d4 100% );
+    min-height:100vh;
+    width:100%;
+} 
+ 
+.title{
+    font-size: 80px;
+    margin-bottom: 12px;
+    text-align: left;
+    line-height: 1;
+}
+
+ /* LANDING PAGE  */
+
+ #landing-page {
+    min-height:100vh;
+   
+   
+
+ }
+
+ .header {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    width:100%;
+    max-width: 1000px;
+ }
+
+.header-para {
+    font-size:24px;
+    line-height: 2;
+    max-width: 450px;
+  
+   
+}
+
+p{
+    letter-spacing: normal;
+    line-height: 1.6;
+    max-width: 65ch;
+    margin-top:15px;
+}
+
+
+
+
+.title-secondary {
+    color: #5c0000;
+    font-size:80px;
+}
+
+.maroon {
+    color: #b3000b;
+    
+}
+
+
+
+
+/* SOCIAL LINKS  */
+.social__list {
+    margin-top:30px;
+    display:flex;
+    gap:16px;
+    
+}
+
+.social__link {
+    gap:24px;
+    display:flex;
+    justify-content: center;
+
+}
+
+
+/* THE CIRCULAR  BUTTON DESIGN */
+  
+
+  .btn--icon {
+    display:inline-flex;
+    align-items: center;
+    justify-content: center;
+    width:45px;
+    height:45px;
+    border-radius: 50%;
+    background-color: transparent;
+    color:maroon;
+    border:2px solid maroon;
+    text-decoration: none;
+    font-size:1.2rem;
+    transition: all 0.3s ease;
+
+  }
+
+
+  .btn--icon:hover {
+    transform:translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+
+  }
+
+   /*LINKED OFFICIAL BLUE */
+
+   .btn--icon.linked:hover {
+    background-color: #328ee9;
+    border-color:#0a66c2;
+    color:white;
+   }
+   
+   /* GITHUB OFFICIAL DARK GREY */
+
+     .btn--icon.github:hover {
+        background-color:#2dba4e;
+        border-color:rgb(2, 71, 2);
+        color:black;
+     }
+   
+
+     .btn--icon.resume:hover {
+        background-color: maroon;
+        border-color:black;
+        color:white;
+     }
+
+     .btn--icon.behance:hover {
+        background-color:#021d4f;
+        border-color:#1769ff;
+        color:white;
+     }
+
+ /* END  OF BUTTON STYLES */
+
+
+ /*EMAIL BUTTON */
+
+.mail__btn {
+   position:fixed;
+   width:70px;
+   height:70px;
+   font-size: 32px;
+   border-radius: 50%;
+   border:none;
+   cursor: pointer;
+   bottom:40px;
+   right:40px;
+   display:flex;
+   justify-content: center;
+   color:white;
+   font-size:1.6rem;
+   background: linear-gradient(145deg, #b30000, #5c0000);
+   padding:0;
+   align-items: center;
+
+
+/* BUTTON SHINY EFFECT */
+
+background:linear-gradient(145deg, #b30000, #5c0000);
+box-shadow:0 10px 20px rgba(128, 0, 0,  0.4),
+inset 0 3px 5px rgba(255, 255, 255, 0.3);
+transition: all 0.3s ease;
+
+}
+
+
+/* THE DARK OVERLAY (HIDDEN BY DEFAULT */
+
+.modal-overlay {
+    
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index:9999;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition:all 0.3s ease-in-out;
+
+
+}
+
+.modal-overlay.show {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.modal-card {
+   display:flex;
+   width:900px;
+   max-width: 90%;
+   border-radius: 20px;
+   overflow: hidden;
+   position: relative;
+   box-shadow: 0 25px 50px rgba(0,0,0,0,5);
+
+}
+
+/*. THE CLOSE BUTTON */
+
+.close-btn {
+    position: absolute;
+    top:15px;
+    right:25px;
+    font-size:30px;
+    color:white;
+    cursor: pointer;
+    z-index: 10;
+}
+
+
+/* THE LEFT SIDE (LIGHT BLUSH) */
+
+.modal-left {
+    background-color: #fdf5f5;
+    padding:50px;
+    width:50%;
+    color:#333;
+}
+
+h3 {
+    color:#530303;
+}
+
+
+
+/* SKILLS PILL DESIGN SECTION */
+
+.skills-wrapper {
+    display:grid;
+    flex-wrap: wrap;
+    gap:15px;
+    margin-top:50px;
+    padding-bottom:20px;
+    grid-template-columns: auto auto;
+    justify-content: start;
+
+}
+
+
+.skill-pill {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 24px;
+    border-radius:50px;
+    font-weight:800;
+    font-size:0.9rem;
+    letter-spacing: 1px;
+    cursor: default;
+    transition: transform 0.2s ease, box-shadow0.2s ease;
+    color:#ffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0,1);
+    
+    
+}
+
+
+.skill-pill:hover {
+    transform:  translateY(-3px);
+    color:#ffff;
+    border-color: transparent;
+    transform:translateY(-3px);
+    box-shadow:0 8px 15px rgba(128, 0, 0,0.2);
+    background: none;
+    animation:wiggle 0.4s ease-in-out;
+    transform:translateY(-3px);
+}
+
+.skill-pill {
+ transform: translateY(-3px);
+ box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+
+
+}
+
+
+
+
+ /* THE COLORS */
+
+.skill-pill.html {
+    background-color: #e34f26;
+}
+
+.skill-pill.css {
+    background-color: #1573b6;
+}
+
+.skill-pill.javascript {
+    background-color:#f7df1e;
+    color: #333333;
+}
+
+
+.skill-pill.react {
+    background-color: #61dafb;
+    color:#333333;
+}
+
+
+  /*  HOVER  */
+
+
+  .skill-pill.html:hover {
+    background-color: #c2421e;
+  }
+
+
+  .skill-pill.css:hover {
+    background-color: #115c93;
+  }
+
+
+  .skill-pill.javascript:hover {
+    background-color: #d6c018;
+  } 
+
+   .skill-pill.react:hover {
+      background-color: #4eb4cf;
+   }
+
+
+     /* SKILL PILL WIGGLE */
+
+     @keyframes wiggle {
+        0%{ transform: tranaslateY(-3px) rotate(0deg); }
+        25%{ transform: translateY(-3px) rotate(-4deg) }
+        50%{transform: translateY(-3px)  rotate(-4deg) }
+        75%{transform:translateY(-3px)   rotate(-2deg) }
+        100%{transform:translateY(-3px)  rotate(0deg)  }
+     }
+
+
+
+   
+/* THE RIGHT SIDE (DARK) */
+
+   .modal-right {
+      background-color: #620101;
+      padding:50px;
+      width:50%;
+      color:white;
+      
+
+   }
+      
+
+     .modal-right p {
+        color:#d19494;
+        font-size: 14px;
+        font-weight:600;
+        margin-bottom:35px;
+        line-height: 1.5;
+
+     }
+
+     /* THE FORM */
+
+     .contact-form input,
+     .contact-form textarea {
+      width: 100%;
+      background:transparent;
+      border:none;
+      border-bottom:1px solid #ffff;
+      color:white;
+      padding:12px 0;
+      margin-bottom:25px;
+      outline:none;
+      font-size:1rem;
+     
+
+     }
+
+     .contact-form input:focus,
+     .contact-form textarea:focus {
+        border-bottom: 2px solid #b30000;
+     }
+
+
+
+     /* SUBMIT BUTTON   */
+    
+
+     .btn--submit {
+        margin-top:30px;
+        color:#a81c1c;
+        padding:12px 30px;
+        border-radius: 8px;
+        font-weight: 800;
+        cursor: pointer;
+        border:2px solid transparent;
+        transition: all 0.3s ease;
+        background: white;
+        box-shadow: 0 8px 15px rgba(255, 255, 255, 0.3);
+     }
+
+
+     .btn--submit:hover {
+        background: #d19494;
+        color:#ffff;
+     }
+
+
+
+    .scroll-bounce {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:45px;
+    height:45px;
+    border-radius: 50%;
+    text-decoration: none;
+    color:white;
+    font-size:1.5rem;
+    margin:40px auto o auto;
+    background: linear-gradient(145deg, #b30000, #5c0000);
+    box-shadow:0 8px 15px rgba(128, 0, 0, 0.3),
+    inset 0 3px 5px rgba(255, 255, 255, 0.3);
+    animation: bounce 2s infinite;
+    position: absolute;
+    bottom:20px;
+    left:50%;
+  
+    
+}
+
+
+
+
+
+
+
+
+
+/* THE ANIMATION KEYFRAMES */
+
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+       transform: translate x(-50%) translateY(-15px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-7px);
+    }
+}
+
+ /* HOVER ANIMATION */
+
+.mail__btn:hover {
+    transform:translateY(-4px) scale(1.05);
+    box-shadow: 0 15px 25px rgba(128, 0, 0, 0.5),
+    inset 0 4px 6px rgba(255, 255, 255, 0.4);
+}
+
+
+/* NAVIGATION */
+
+#personal-logo {
+    width:150px;
+    height:150px;
+     /* filter:invert(1); */
+
+}
+
+ #personal-logo  {
+    filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.15));
+}
+
+ nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:100%;max-width: 1200px;
+    margin: 0 auto;
+    height: 100px;
+    padding: 0 20px;
+
+}
+
+.nav__link--list {
+    display:flex;
+    padding:0 20px;
+}
+
+
+.nav__link {
+    margin:0 12px;
+    cursor: pointer;
+    
+
+}
+
+
+
+.nav__link--anchor {
+    text-decoration: none;
+    font-size:16px;
+    color:#6d2c2c;
+    font-weight:700;
+  
+
+}
+
+
+.nav__link--anchor:hover {
+    color:#8a3b3b;
+     transform:scale(1.1) translateY(-2px);
+    display: inline-block;
+    transition: transform 0.2s ease , color 0.2s ease, text-shadow 0.2s ease; 
+    text-shadow: 0px 4px 6px rgba(109, 44, 44, 0.2);
+}
+
+li {
+    list-style: none;
+}
+
